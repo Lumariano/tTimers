@@ -302,12 +302,10 @@ local function Initialize(tracker, buffer)
 		return CalculateEnfeeblingDuration(30, targetId), 7;
 	end
 
-	--[[UNKNOWN
     --Bind
 	buffer[258] = function(targetId)
-		return CalculateEnfeeblingDuration(40, targetId);
+		return CalculateEnfeeblingDuration(60, targetId), 11;
 	end
-    ]]--
 
 	--Sleep II
 	buffer[259] = function(targetId)
@@ -423,12 +421,10 @@ local function Initialize(tracker, buffer)
 		return CalculateEnfeeblingDuration(300, targetId), 404;
 	end
 
-    --[[UNKNOWN
 	--Addle II
 	buffer[884] = function(targetId)
-		return 0;
+		return CalculateEnfeeblingDuration(180, targetId), 21;
 	end
-    ]]--    
 
 	--Inundation
 	buffer[879] = function(targetId)
