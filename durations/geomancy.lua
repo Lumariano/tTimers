@@ -27,8 +27,11 @@ local indiDuration = {
     [27193] = 15, --Bagua Pants +1
     [23284] = 18, --Bagua Pants +2
     [23619] = 21, --Bagua Pants +3
+    [24073] = 21, --Bagua Pants +4
     [27451] = 15, --Azimuth Gaiters
     [27452] = 20, --Azimuth Gaiters +1
+    [23373] = 25, --Azimuth Gaiters +2
+    [23708] = 30, --Azimuth Gaiters +3
     [26266] = 20 --Nantosuelta's Cape
 };
 
