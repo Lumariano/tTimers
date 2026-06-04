@@ -69,7 +69,9 @@ local minuetEquipment = {
     [18832] = 0.3, --Apollo's Flute
     [11093] = 0.1, --Aoidos' Hngrln. +2
     [26916] = 0.1, --Fili Hongreline
-    [26917] = 0.1 --Fili Hongreline +1
+    [26917] = 0.1, --Fili Hongreline +1
+	[23161] = 0.1, --Fili Hongreline +2
+	[23496] = 0.1 --Fili Hongreline +3
 };
 local paeonEquipment = {
     [17357] = 0.1, --Ebony Harp
@@ -79,7 +81,8 @@ local paeonEquipment = {
     [27672] = 0.1, --Brioso Roundlet
     [27693] = 0.1, --Brioso Roundlet +1
     [23049] = 0.1, --Brioso Roundlet +2
-    [23384] = 0.1 --Brioso Roundlet +3
+    [23384] = 0.2, --Brioso Roundlet +3
+	[23904] = 0.2, --Brioso Roundlet +4
 };
 local madrigalEquipment = {
     [17348] = 0.1, --Traversiere
@@ -89,6 +92,8 @@ local madrigalEquipment = {
     [11073] = 0.1, --Aoidos' Calot +1
     [26758] = 0.1, --Fili Calot
     [26759] = 0.1, --Fili Calot +1
+	[23094] = 0.1, --Fili Calot +2
+	[23429] = 0.1, --Fili Calot +3
     [26255] = 0.1 --Intarabus's Cape
 };
 local mamboEquipment = {
@@ -114,6 +119,8 @@ local balladEquipment = {
     [11133] = 0.1, --Aoidos' Rhing. +2
     [27255] = 0.1, --Fili Rhingrave
     [27256] = 0.1, --Fili Rhingrave +1
+	[23295] = 0.1, --Fili Rhingrave +2
+	[23630] = 0.1, --Fili Rhingrave +3
     [21401] = 0.2 --Blurred Harp +1
     --[17851] = 0.1 --Storm Fife (Code later for assault/salvage zones only..)
 };
@@ -126,7 +133,9 @@ local marchEquipment = {
     [17360] = 0.3, --Langeleik
     [11113] = 0.1, --Ad. Mnchtte. +2
     [27070] = 0.1, --Fili Manchettes
-    [27071] = 0.1 --Fili Manchettes +1
+    [27071] = 0.1, --Fili Manchettes +1
+	[23228] = 0.1, --Fili Manchettes +2
+	[23563] = 0.1 --Fili Manchettes +3
 };
 local preludeEquipment = {
     [17350] = 0.1, --Angel's Flute
@@ -154,7 +163,9 @@ local scherzoEquipment = {
     [17363] = 0.1, --Mass Chalemie
     [11153] = 0.1, --Aoidos' Cothrn. +2
     [27429] = 0.1, --Fili Cothurnes
-    [27430] = 0.1 --Fili Cothurnes +1
+    [27430] = 0.1, --Fili Cothurnes +1
+	[23362] = 0.1, --Fili Cothurnes +2
+	[23697] = 0.1 --Fili Cothurnes +3
 };
 local requiemEquipment = {
     [17372] = 0.1, --Flute +1
@@ -177,7 +188,8 @@ local lullabyEquipment = {
     [27952] = 0.1, --Brioso Cuffs
     [27973] = 0.1, --Brioso Cuffs +1
     [23183] = 0.1, --Brioso Cuffs +2
-    [23518] = 0.2  --Brioso Cuffs +3
+    [23518] = 0.2, --Brioso Cuffs +3
+	[23994] = 0.2 --Brioso Cuffs +4
 };
 local elegyEquipment = {
     [17352] = 0.1, --Horn
@@ -251,6 +263,7 @@ local allSongsEquipment = {
     [28253] = 0.11, --Brioso Slippers +1
     [23317] = 0.13, --Brioso Slippers +2
     [23652] = 0.15, --Brioso Slippers +3
+	[24084] = 0.15 --Brioso Slippers +4
 };
 
 local function GetInstrumentId();
