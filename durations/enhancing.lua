@@ -269,27 +269,19 @@ local function CalculateRegenDuration(baseDuration, targetId)
     duration = duration + dataTracker:EquipSum(regenDuration);
     if job.Main == 3 and job.MainLevel == 99 then
         duration = duration + (3 * dataTracker:GetJobPointCount(3, 8));
-    end
-    
-    --Light Arts
-    if dataTracker:GetBuffActive(358) or dataTracker:GetBuffActive(401) then
-        local schLevel = 0;
-        if job.Main == 20 then
-            schLevel = job.MainLevel;
-            if schLevel == 99 then
-                duration = duration + (3 * dataTracker:GetJobPointCount(20, 2));
-            end
-        else
-            schLevel = job.SubLevel;
+    --SCH main and Light Arts
+    elseif job.Main == 20 and (dataTracker:GetBuffActive(358) or dataTracker:GetBuffActive(401)) then
+        if job.MainLevel == 99 then
+            duration = duration + (3 * dataTracker:GetJobPointCount(20, 2));
         end
-
+        
         --Stepwise 25,28,31,34,37,40 = 3,6,9,12,15,18... untested, absolute guesswork
         --https://www.bluegartr.com/threads/109412-Regen-Spells-amp-Light-Arts?p=5067176&viewfull=1#post5067176
         --Not verified for every single level.
-        if schLevel > 25 then
-            local seconds = math.floor(((schLevel - 22) / 3) * 3);
-            if schLevel > 40 then
-                seconds = math.floor((schLevel - 1) / 4) * 2;
+        if job.MainLevel > 25 then
+            local seconds = math.floor(((job.MainLevel - 22) / 3) * 3);
+            if job.MainLevel > 40 then
+                seconds = math.floor((job.MainLevel - 1) / 4) * 2;
             end
             if dataTracker:GetBuffActive(377) then
                 seconds = seconds * 2;
