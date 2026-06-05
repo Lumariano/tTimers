@@ -36,6 +36,7 @@ local actionMessages = T{
     Applied = T{ 100, 115, 205, 230, 266, 280, 319, 420, 421, 424, 425, 667 },
 };
 local rolls = T{ 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 302, 303, 304, 305, 390, 391 };
+local indis = T{ 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797 };
 local buffOverrides = T{
 };
 
@@ -260,7 +261,7 @@ end
 local function HandleSpellComplete(packet)
     for _,target in ipairs(packet.Targets) do
         for _,action in ipairs(target.Actions) do
-            if (actionMessages.Applied:contains(action.Message)) then
+            if (actionMessages.Applied:contains(action.Message) or indis:contains(packet.Id)) then
                 local duration, buffId = durations:GetSpellDuration(packet.Id, target.Id);
                 if type(buffId) == 'table' then
                     buffId = buffId[1];
