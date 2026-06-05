@@ -42,17 +42,18 @@ local function CalculateGeomancyDuration(targetId)
 end
 
 local function CalculateIndicolureDuration(targetId)
-    local augments = dataTracker:ParseAugments();
-    local duration = 180 + dataTracker:EquipSum(indiDuration);
-    local indiduration = augments.Generic[0x4E2];
-    if indiDuration then
-        local multiplier = 1.00;
-        for _,v in pairs(indiDuration) do
-            multiplier = multiplier + (0.01 * (v + 1));
+    local job = dataTracker:GetJobData();
+    local duration = 180;
+    if job.Main == 21 then
+        duration = duration + dataTracker:EquipSum(indiDuration);
+        if job.MainLevel == 99 then
+            duration = duration + (2 * dataTracker:GetJobPointCount(21, 9));
         end
-        duration = duration * multiplier;
     end
-    return duration;
+    local augments = dataTracker:ParseAugments();
+    local multiplier = 1 + (augments.IndiDuration or 0);
+
+    return duration * multiplier;
 end
 
 local function Initialize(tracker, buffer)
@@ -60,152 +61,152 @@ local function Initialize(tracker, buffer)
 
     --Indi-Regen
     buffer[768] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Poison
     buffer[769] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Refresh
     buffer[770] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Haste
     buffer[771] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-STR
     buffer[772] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-DEX
     buffer[773] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-VIT
     buffer[774] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-AGI
     buffer[775] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-INT
     buffer[776] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-MND
     buffer[777] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-CHR
     buffer[778] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Fury
     buffer[779] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Barrier
     buffer[780] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Acumen
     buffer[781] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Fend
     buffer[782] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Precision
     buffer[783] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Voidance
     buffer[784] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Focus
     buffer[785] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Attunement
     buffer[786] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Wilt
     buffer[787] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Frailty
     buffer[788] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Fade
     buffer[789] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Malaise
     buffer[790] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Slip
     buffer[791] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Torpor
     buffer[792] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Vex
     buffer[793] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Languor
     buffer[794] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Slow
     buffer[795] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Paralysis
     buffer[796] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Indi-Gravity
     buffer[797] = function(targetId)
-        return CalculateIndicolureDuration(targetId);
+        return CalculateIndicolureDuration(targetId), 612;
     end
 
     --Geo-Regen
