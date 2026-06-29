@@ -220,7 +220,7 @@ local allSongsEquipment = {
     [20562] = 0.50, --Carnwenhan(119, Afterglow)
     [20586] = 0.50, --Carnwenhan(119+)
     [20629] = 0.05, --Legato Dagger
-    [20599] = 0.10, --Kali
+    [20599] = 0.05, --Kali
 
     --Horns
     --[21409] = 0.20 --Forefront Flute, reive only
@@ -288,7 +288,7 @@ local function SongSum()
     local augments = dataTracker:ParseAugments().Generic[0x043];
     if augments then
         for _,v in pairs(augments) do
-            total = total + (v + 1);
+            total = total + (v / 10 + 0.1);
         end
     end
     return total;
